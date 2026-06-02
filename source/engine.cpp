@@ -55,8 +55,6 @@ void Engine::PushRegisteredConVarsToEngine(void)
 	for (i = 0; i < m_regVars.Size(); i++)
 	{
 		ptr = &m_regVars[i];
-		if (!ptr)
-			continue;
 
 		g_engfuncs.pfnCVarRegister(&ptr->reg);
 		ptr->self->m_eptr = g_engfuncs.pfnCVarGetPointer(ptr->reg.name);
